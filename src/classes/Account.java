@@ -21,6 +21,6 @@ public abstract class Account {
 
     /* ======================= Member methods ======================= */
     public abstract double checkBalance();
-    public abstract void withdraw(double wAmount) throws IllegalArgumentException;
-    public abstract void deposit(double dAmount) throws IllegalArgumentException;
+    public abstract void withdraw(double wAmount);
+    public abstract void deposit(double dAmount);
 }

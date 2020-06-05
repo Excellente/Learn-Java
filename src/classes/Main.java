@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Account cq = new ChequeAccount(624382364, 127, 0, "Mnumzame", "Mumbe", "Cheque Account");
+        Account cq = new ChequeAccount(624382364, 127, 0, "Mnumzane", "Mumbe", "Cheque Account");
 
         System.out.println("================== Welcome to Intellect Bank ===============");
         System.out.println("Please select from the options below and press enter:");
