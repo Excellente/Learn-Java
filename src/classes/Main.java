@@ -6,24 +6,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws InputMismatchException, IllegalArgumentException {
         Scanner sc = new Scanner(System.in);
-        ChequeAccount cq = new ChequeAccount(643823647, 127, 0, "Mnumzame", "Mumbe", "Cheque Account");
+        Account cq = new ChequeAccount(624382364, 127, 0, "Mnumzame", "Mumbe", "Cheque Account");
 
-        System.out.println("================== Welcome to Bank Zero ===============");
+        System.out.println("================== Welcome to Intellect Bank ===============");
         System.out.println("Please select from the options below and press enter:");
         System.out.println("0. Check Balances");
         System.out.println("1. Deposit Money");
         System.out.println("2. Withdraw Money");
         System.out.println("3. Exit");
 
-        boolean p = true;
-        while (p) {
+        while (true) {
             try {
-
                 double amnt;
                 int cmmnd = sc.nextInt();
 
                 if (cmmnd == 3) {
-                    System.out.println("Thank you for banking with Bank Zero, please call again.");
+                    System.out.println("Thank you for banking with Intellect Bank, please call again.");
                     break;
                 }
                 switch (cmmnd) {

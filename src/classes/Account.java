@@ -1,14 +1,16 @@
 package classes;
 
-public class Account {
-    private int accNumber;
-    private double balance;
+public abstract class Account {
     private String accType;
+    private double balance;
+    private final int accNumber;
     private String accHolderLastName;
     private double monthlyServiceFee;
     private String accHolderFirstName;
 
-    public Account() {}
+    public Account(int accNumber) {
+        this.accNumber = accNumber;
+    }
 
     public Account(int accNumber, double msFee, double balance, String fname, String lname, String accType) {
         this.balance = balance;
@@ -19,33 +21,22 @@ public class Account {
         this.accHolderFirstName = fname;
     }
 
-    // setters
-    public void setBalance(double deposit) {
-        this.balance = deposit;
-    }
-
-    public void setAccType(String accType) {
-        this.accType = accType;
-    }
-
-    // getters
+    /* ======================= getters ======================= */
     public double getBalance() {
         return this.balance;
     }
 
-    // member methods
-    public void withdraw(double wAmount) throws IllegalArgumentException {
-        if (wAmount > this.balance) throw new IllegalArgumentException("Insufficient funds.");
-        this.balance -= wAmount;
+    /* ======================= setters ======================= */
+    public void setAccType(String accType) {
+        this.accType = accType;
+    }
+    public void setBalance(double deposit) {
+        this.balance = deposit;
     }
 
-    public void deposit(double dAmount) throws IllegalArgumentException {
-        if (!(dAmount > 0)) throw new IllegalArgumentException("Invalid value for deposit");
-        double current = this.getBalance();
-        this.setBalance( current + dAmount);
-    }
+    /* ======================= Member methods ======================= */
+    public abstract double checkBalance();
+    public abstract void withdraw(double wAmount) throws IllegalArgumentException;
+    public abstract void deposit(double dAmount) throws IllegalArgumentException;
 
-    public double checkBalance() {
-        return this.balance;
-    }
 }
