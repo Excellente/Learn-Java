@@ -1,42 +1,26 @@
 package classes;
 
 public abstract class Account {
-    private String accType;
-    private double balance;
-    private final int accNumber;
-    private String accHolderLastName;
-    private double monthlyServiceFee;
-    private String accHolderFirstName;
+    protected String accType;
+    protected double balance;
+    protected final int accNumber;
+    protected String accHolderLastName;
+    protected double monthlyServiceFee;
+    protected String accHolderFirstName;
 
     public Account(int accNumber) {
         this.accNumber = accNumber;
     }
 
-    public Account(int accNumber, double msFee, double balance, String fname, String lname, String accType) {
-        this.balance = balance;
-        this.accType = accType;
-        this.accNumber = accNumber;
-        this.monthlyServiceFee = msFee;
-        this.accHolderLastName = lname;
-        this.accHolderFirstName = fname;
-    }
-
     /* ======================= getters ======================= */
-    public double getBalance() {
-        return this.balance;
-    }
+    public abstract double getBalance();
 
     /* ======================= setters ======================= */
-    public void setAccType(String accType) {
-        this.accType = accType;
-    }
-    public void setBalance(double deposit) {
-        this.balance = deposit;
-    }
+    public abstract void setAccType(String accType);
+    public abstract void setBalance(double deposit);
 
     /* ======================= Member methods ======================= */
     public abstract double checkBalance();
     public abstract void withdraw(double wAmount) throws IllegalArgumentException;
     public abstract void deposit(double dAmount) throws IllegalArgumentException;
-
 }

@@ -6,26 +6,32 @@ public class ChequeAccount extends Account {
         super(accNumber);
     }
     public ChequeAccount(int accNumber, double msFee, double balance, String fname, String lname, String accType) {
-        super(accNumber, msFee, balance, fname, lname, accType);
+        super(accNumber);
+        this.balance = balance;
+        this.accType = accType;
+        this.monthlyServiceFee = msFee;
+        this.accHolderLastName = lname;
+        this.accHolderFirstName = fname;
+    }
+
+    /* ======================= getters ======================= */
+    public double getBalance() {
+        return this.balance;
     }
 
     /* ======================= setters ======================= */
-    @Override
-    public void setBalance(double deposit) {
-        super.setBalance(deposit);
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
-    @Override
     public void setAccType(String accType) {
-        super.setAccType(accType);
+        this.accType = accType;
     }
 
     /* ======================= Member methods ======================= */
     public void withdraw(double wAmount) throws IllegalArgumentException {
-        double currentBalance = super.getBalance();
-
-        if (wAmount > currentBalance) throw new IllegalArgumentException("Insufficient funds.");
-        super.setBalance(currentBalance -= wAmount);
+        if (wAmount > this.balance) throw new IllegalArgumentException("Insufficient funds.");
+        this.balance -= wAmount;
     }
 
     public void deposit(double dAmount) throws IllegalArgumentException {
@@ -35,6 +41,6 @@ public class ChequeAccount extends Account {
     }
 
     public double checkBalance() {
-        return super.getBalance();
+        return this.getBalance();
     }
 }
