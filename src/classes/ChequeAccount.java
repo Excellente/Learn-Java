@@ -31,6 +31,7 @@ public class ChequeAccount extends Account {
     /* ======================= Member methods ======================= */
     public void withdraw(double wAmount) throws IllegalArgumentException {
         if (wAmount > this.balance) throw new IllegalArgumentException("Insufficient funds.");
+        else if (wAmount < 0) throw new IllegalArgumentException("Invalid value for withdrawal.");
         this.balance -= wAmount;
     }
 

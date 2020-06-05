@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InputMismatchException, IllegalArgumentException {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Account cq = new ChequeAccount(624382364, 127, 0, "Mnumzame", "Mumbe", "Cheque Account");
 
