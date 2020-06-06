@@ -1,4 +1,4 @@
-package classes;
+package banking;
 
 public abstract class Account {
     protected String accType;
